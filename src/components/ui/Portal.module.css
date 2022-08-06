@@ -9,7 +9,7 @@
     rgba(104, 228, 188, 0.9) 0%,
     rgba(74, 208, 209, 0.9) 99%
   );
-  padding: 0 2rem;
+  padding: 0 2rem 1rem 2rem;
   animation: fade-in 0.4s;
   overflow-y: auto;
 }
@@ -36,7 +36,7 @@
   }
 }
 @media only screen and (max-width: 600px) {
- .portal{
-   padding: 0 1rem;
- }
+  .portal {
+    padding: 1rem;
+  }
 }
