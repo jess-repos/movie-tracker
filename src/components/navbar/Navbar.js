@@ -6,7 +6,7 @@ import classes from "./Navbar.module.css";
 import Search from "../search/Search";
 
 const Navbar = () => {
-  const [isSearchOpen, setIsSearchOpen] = useState(true); // put back to false
+  const [isSearchOpen, setIsSearchOpen] = useState(false); // put back to false
 
   return (
     <nav className={classes.navbar}>
