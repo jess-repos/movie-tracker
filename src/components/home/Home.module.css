@@ -1,0 +1,36 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.selector {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+.selector li {
+  cursor: pointer;
+  list-style: none;
+  background-color: #f7f7fc;
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid transparent;
+  transition: all ease 0.4s;
+}
+
+.selected,
+.selector li:hover {
+  background-color: #ffffff !important;
+  border: 1px solid #f775c1 !important;
+}
+@media only screen and (max-width: 600px) {
+  .actions,
+  .selector {
+    gap: 0.5rem;
+  }
+}

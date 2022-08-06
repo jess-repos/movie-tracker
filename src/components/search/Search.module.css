@@ -1,0 +1,14 @@
+.search input {
+  display: block;
+  margin: 1rem auto 2rem auto;
+  padding: 0.75rem 2rem;
+  outline: 0;
+  border: 0;
+  transition: all ease 0.4s;
+  max-width: 24rem;
+  border-radius: 0.25rem;
+  width: 100%;
+
+}
+.search input:focus {
+}
