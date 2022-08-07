@@ -44,7 +44,7 @@
   position: absolute;
   top: 19rem;
   right: 1rem;
-  background-image: linear-gradient(to right, #f775c1 0%, #be438b 99%);
+  background-image: linear-gradient(to right, #f775c1 0%, #e24ea4 99%);
   border-radius: 0.25rem;
   padding: 0.75rem 2rem;
   font-weight: bold;
@@ -57,7 +57,7 @@
   opacity: 0;
 }
 .item button:hover {
-  background-image: linear-gradient(to right, #d372ab 0%, #b93f86 99%);
+  background-image: linear-gradient(to right, #ec84c1 0%, #d64f9e 99%);
 }
 .item:hover button {
   opacity: 1 !important;

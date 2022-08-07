@@ -1,10 +1,14 @@
-import { createContext, useContext } from "react";
+import { createContext, useContext, useState } from "react";
 
-const DataContext = createContext();
+const DataContext = createContext({
+  movies: [],
+  addMovieHandler: () => {},
+  editMovieHandler: () => {},
+});
 
 export const useData = () => useContext(DataContext);
 
-const movies = [
+const MOVIES = [
   {
     title: "Ice Age The Adventures of Buck Wild",
     image:
@@ -50,11 +54,17 @@ const movies = [
 ];
 
 const DataProvider = ({ children }) => {
-  const searchOpenHandler = () => {
-    setIsSearchOpen((prev) => !prev);
+  const [movies, setMovies] = useState(MOVIES);
+
+  const addMovieHandler = (item) => {
+    setMovies((prev) => [...prev, item]);
   };
+  const editMovieHandler = (item) => {};
+
   return (
-    <DataContext.Provider value={{ movies }}>{children}</DataContext.Provider>
+    <DataContext.Provider value={{ movies, addMovieHandler, editMovieHandler }}>
+      {children}
+    </DataContext.Provider>
   );
 };
 

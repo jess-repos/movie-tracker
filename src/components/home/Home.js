@@ -7,6 +7,7 @@ import {
 import { useData } from "../../context/DataProvider";
 import List from "../list/List";
 import Button from "../ui/Button";
+import Portal from "../ui/Portal";
 import classes from "./Home.module.css";
 
 const selection = [
@@ -33,24 +34,38 @@ const selection = [
 ];
 
 const Home = () => {
-  const { movies } = useData();
+  const { movies, addMovieHandler } = useData();
+  const [isAddOpen, setIsAddOpen] = useState(false);
   const [selected, setSelected] = useState(selection[0]);
   const [list, setList] = useState(movies);
 
   const selectorHandler = (item) => {
     setSelected(item);
-    if (item.status === "all") return setList(movies);
+  };
+
+  useEffect(() => {
+    if (selected.status === "all") return setList(movies);
     const filteredMovies = movies.filter(
-      (movie) => movie.status === item.status
+      (movie) => movie.status === selected.status
     );
     setList(filteredMovies);
-  };
+  }, [selected, movies]);
+
+  // const addMovie = () => {
+  //   const movie = {
+  //     title: "The Hunger Games",
+  //     status: 1,
+  //     image:
+  //       "https://m.media-amazon.com/images/M/MV5BMjA4NDg3NzYxMF5BMl5BanBnXkFtZTcwNTgyNzkyNw@@._V1_.jpg",
+  //   };
+  //   addMovieHandler(movie);
+  // };
 
   return (
     <div>
       <div className={classes.header}>
         <h3>{selected.name}</h3>
-        <Button>Add</Button>
+        <Button onClick={() => setIsAddOpen(true)}>Add</Button>
       </div>
       <ul className={classes.selector}>
         {selection.map((item) => (
@@ -65,6 +80,9 @@ const Home = () => {
         ))}
       </ul>
       <List list={list} />
+      {isAddOpen && (
+        <Portal onClose={() => setIsAddOpen(false)}>Add mode</Portal>
+      )}
     </div>
   );
 };
