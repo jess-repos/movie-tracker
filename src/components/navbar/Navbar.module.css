@@ -22,11 +22,12 @@
   border-radius: 50%;
   width: 2rem;
   height: 2rem;
-  background-image: linear-gradient(to right, #68e4bc 0%, #4ad0d1 99%);
-  box-shadow: 0 12px 12px -11px #0db4afb8;
+  /* background-image: linear-gradient(to right, #68e4bc 0%, #4ad0d1 99%); */
+  background-image: linear-gradient(to right, #8368e4 0%, #4a75d1 99%);
+  box-shadow: 0 12px 12px -11px #8368e4;
 }
 @media only screen and (max-width: 600px) {
- .navbar{
-   padding: 0 .75rem;
- }
+  .navbar {
+    padding: 0 0.75rem;
+  }
 }

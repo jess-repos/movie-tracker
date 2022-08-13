@@ -19,7 +19,7 @@ const Search = () => {
     return () => {
       clearTimeout(timeout);
     };
-  }, [searchInput]);
+  }, [searchInput, movies]);
 
   return (
     <div className={classes.search}>

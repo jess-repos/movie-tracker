@@ -3,12 +3,15 @@
   gap: 2rem;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   margin-top: 1rem;
+  --color-primary: #d333c6;
+  --color-bg: #fcfcff;
 }
 .item {
   box-shadow: 0 20px 10px -15px rgb(197 192 249 / 20%);
   border-radius: 0.25rem;
   transition: all ease 0.4s;
-  background-color: #fcfcff;
+  background-color: var(--color-bg);
+  /* background-color: var(--color-primary); */
   position: relative;
   /* border: 1px solid #68e4bc  ; */
   overflow: hidden;
@@ -32,8 +35,8 @@
   justify-content: center;
   align-items: center;
   font-weight: bold;
-  background-color: #fcfcff;
-  border: 1px solid #f775c1;
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-primary);
   /* color: #ffffff; */
   position: absolute;
   top: 19rem;
@@ -44,20 +47,21 @@
   position: absolute;
   top: 19rem;
   right: 1rem;
-  background-image: linear-gradient(to right, #f775c1 0%, #e24ea4 99%);
+  background-image: linear-gradient(to right, #d333c6 0%, #ce18bf 99%);
   border-radius: 0.25rem;
   padding: 0.75rem 2rem;
   font-weight: bold;
   cursor: pointer;
   text-align: center;
   color: #ffffff;
-  box-shadow: 0 12px 12px -11px #f775c1;
+  box-shadow: 0 12px 12px -11px #d333c6;
   border: none;
   transition: all ease 0.4s;
   opacity: 0;
 }
 .item button:hover {
-  background-image: linear-gradient(to right, #ec84c1 0%, #d64f9e 99%);
+  /* background-image: linear-gradient(to right, #ec84c1 0%, #d64f9e 99%); */
+  background-image: linear-gradient(to right, #b62baa 0%, #a31297 99%);
 }
 .item:hover button {
   opacity: 1 !important;
